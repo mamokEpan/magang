@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>403 Forbidden</title>
+</head>
+<body>
+
+<p>Directory access is forbidden.</p>
+
+</body>
+</html>
+
+$pdf = new FPDF('P', 'mm','A4');
+
+        $pdf->AddPage();
+        $pdf->SetMargins(40,40,30);
+        $pdf->SetLeftMargin(40);
+        $pdf->Image(base_url('assets/uir.jpg'),165,10,25,22); //kiri x , bawah y , lebar, tinggi
+        $pdf->Image(base_url('assets/uir.jpg'),30,10,25,22);
+        //kop
+        $pdf->Cell(0,0,'',0,1,'');
+        $pdf->SetFont('Times','B',14);
+        $pdf->Cell(0,5,'YAYASAN LEMBAGA PENDIDIKAN ISLAM (YLPI)',0,1,'C'); // left, space, text, border, vertikal (0) horizontal (1), Center
+        //$pdf->Cell(25);
+        $pdf->Cell(0,5,'UNIVERSITAS ISLAM RIAU',0,1,'C');
+        //$pdf->Cell(25);
+        $pdf->Cell(0,5,'ASRAMA AL-MUNAWWARAH',0,1,'C');
+        $pdf->SetFont('Times','',12);
+        $pdf->Cell(0,5,'"Asrama Tahfizh dan Ilmu-Ilmu Al-Quran"',0,1,'C');
+        //$pdf->Cell(25);
+        $pdf->SetFont('Times','',8);
+        $pdf->Cell(0,5,'Jl. Kaharuddin Nasution No.113. Hp 081281167972, 082277186704 Kode Pos 28284 Marpoyan, Pekanbaru, Riau',0,1,'C');
+        //line
+        //$pdf->Cell(0,5,'',0,1,'C');
+        $pdf->SetLineWidth(0);
+        $pdf->Line(36,36,184,36,'C'); //x left , up/-down, y right, up/-down
+        $pdf->SetLineWidth(1);
+        $pdf->Line(36,37,184,37,'C');
+        //end line
+        //end kop
+
+
+        // $get=$this->db->get_where('daftar_mhs',array('id' =>$id));
+        // foreach ($get->result() as $user) {
+            
+        //}
+
+        $pdf->Cell(0,5,'',0,1,'C');
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'FORMULIR PENDAFTARAN',0,1,'C');
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'PENGHUNI ASRAMA AL-MUNAWWARAH UIR',0,0,'C');
+    
+        $pdf->SetFont('Times','B',8);
+        $pdf->SetLineWidth(0);
+        $pdf->Cell(-20,0,'',0,0,'L');
+        $pdf->Cell(30,8,'NO KAMAR:',1,0,'L');
+       
+        $pdf->Cell(0,5,'',0,1);
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'TAHUN 2020',0,1,'C');
+        //$pdf->Cell(5,3,'',1,0,'C');
+        $pdf->SetFont('Times','',1);
+        // $pdf->SetLineWidth(0);
+        // $pdf->Cell(0,5,'',0,0,'C');
+        // $pdf->Cell(30,8,'',1,1,'C');
+       
+       //$pdf->SetFont('Times','',1);
+        $pdf->SetLineWidth(0);
+        $pdf->Cell(120,5,'',0,0,'C');
+        $pdf->Cell(30,38,'',1,0,'C');
+
+
+
+
+        //end
+
+        $pdf->Cell(0,5,'',0,1,'L');
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'IDENTITAS',0,1,'L');
+        $pdf->SetFont('Times','',12);
+
+        //$pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'Nama',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        //$pdf->cell(20,5, strpos($this->file_model->get_all($npm->npm,'nama')),0,1,'');
+
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'Tempat/Tgl Lahir',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'Jenis Kelamin',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'Alamat',0,0,'');
+        $pdf->cell(40,5, ':',0,1,'');
+        
+        //$pdf->Cell(70,7,'',0,1,'');
+        $pdf->Cell(160,5,'RT:     RW:',0,0,'C');
+        
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'Nomor HP/WA',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+
+         //end
+
+         $pdf->Cell(5,7,'',0,1);
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'DATA AKADEMIS',0,1,'');
+        $pdf->SetFont('Times','',12);
+
+        //$pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'NPM',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'Fakultas',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'Program Studi',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'Semester',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+
+        $pdf->SetFont('Times','',11);
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'IP Terakhir/IPK Terakhir',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        //end
+
+        $pdf->Cell(5,7,'',0,1);
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'PENGALAMAN ORGANISASI',0,1,'');
+        $pdf->SetFont('Times','',12);
+       
+        $pdf->Cell(40,5,'1.',0,0,'');
+        $pdf->cell(60,5, '3.',0,0,'C');
+
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'  Jabatan:',0,0,'');
+        $pdf->cell(70,5, '   Jabatan:',0,1,'C');
+
+        $pdf->Cell(40,5,'2.',0,0,'');
+        $pdf->cell(60,5, '4.',0,0,'C');
+
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'  Jabatan:',0,0,'');
+        $pdf->cell(70,5, '   Jabatan:',0,0,'C');
+        //end
+
+        $pdf->Cell(5,7,'',0,1);
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'PRESTASI',0,1,'');
+        $pdf->SetFont('Times','',12);
+
+        //$pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'1.',0,0,'');
+        $pdf->cell(0,5, 'Tahun(       )Juara(       )',0,0,'C');
+
+        $pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(40,5,'2.',0,0,'');
+        $pdf->cell(0,5, 'Tahun(       )Juara(       )',0,0,'C');
+        //end
+
+        $pdf->Cell(5,7,'',0,1);
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'KEMAMPUAN BAHASA',0,1,'');
+        
+        $pdf->SetFont('Times','',12);
+        
+        //$pdf->Cell(10,7,'',0,1,'');
+        $pdf->Cell(40,5,'Bahasa Arab',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        $pdf->Cell(20,5,'a. Baik',0,0,'C');
+        $pdf->Cell(30,5,'b. Sedang',0,0,'C');
+        $pdf->Cell(30,5,'c. Kurang',0,0,'C');
+
+        $pdf->Cell(5,7,'',0,1,'');
+        $pdf->Cell(40,5,'Bahasa Inggris',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        $pdf->Cell(20,5,'a. Baik',0,0,'C');
+        $pdf->Cell(30,5,'b. Sedang',0,0,'C');
+        $pdf->Cell(30,5,'c. Kurang',0,0,'C');
+        
+        $pdf->Cell(5,7,'',0,1,'');
+        $pdf->Cell(40,5,'Bahasa Indonesia',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        $pdf->Cell(20,5,'a. Baik',0,0,'C');
+        $pdf->Cell(30,5,'b. Sedang',0,0,'C');
+        $pdf->Cell(30,5,'c. Kurang',0,0,'C');
+        //END
+
+        $pdf->Cell(5,7,'',0,1);
+        $pdf->SetFont('Times','B',12);
+        $pdf->Cell(0,5,'IDENTITAS ORANG TUA',0,1,'');
+        $pdf->Cell(40,5,'AYAH/WALI',0,0,'');
+        $pdf->Cell(70,5,'IBU',0,1,'C');
+        $pdf->SetFont('Times','',12);
+       
+        $pdf->Cell(20,5,'Nama',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+        
+        $pdf->Cell(35,5,'',0,0,'');
+        $pdf->Cell(34,5,'Nama',0,0,'C');
+        $pdf->cell(5,5, ':',0,1,'C');
+        
+        //$pdf->Cell(20,5,'',0,1,'');
+        $pdf->Cell(20,5,'TTL',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+
+        $pdf->Cell(35,5,'',0,0,'');
+        $pdf->Cell(34,5,'TTL',0,0,'C');
+        $pdf->cell(5,5, ':',0,1,'C');
+        
+        //$pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(20,5,'Pekerjaan',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+
+        $pdf->Cell(35,5,'',0,0,'');
+        $pdf->Cell(34,5,'Pekerjaan',0,0,'C');
+        $pdf->cell(5,5, ':',0,1,'C');
+
+        //$pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(20,5,'Alamat',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+
+        $pdf->Cell(35,5,'',0,0,'');
+        $pdf->Cell(34,5,'Alamat',0,0,'C');
+        $pdf->cell(5,5, ':',0,1,'C');
+
+        //$pdf->Cell(0,5,'',0,1,'');
+        $pdf->Cell(20,5,'No. Hp',0,0,'');
+        $pdf->cell(5,5, ':',0,0,'');
+
+        $pdf->Cell(35,5,'',0,0,'');
+        $pdf->Cell(34,5,'No. Hp',0,0,'C');
+        $pdf->cell(5,5, ':',0,0,'C');
+        //end
+
+        $pdf->Ln();$pdf->Ln();
+        $pdf->SetFont('Times','','12');
+        $pdf->Cell(60,5,'',0,0,'C');
+        $pdf->cell(80,5,'Pekanbaru,',0,1,'C');
+        
+       $pdf->Ln();$pdf->Ln();$pdf->Ln();
+
+        $pdf->Cell(60,5,'',0,0,'L');
+        $pdf->SetFont('Times','B','12');
+        $pdf->cell(120,10,'(....................................)',0,0,'C');
+        $pdf->Ln();$pdf->Ln();$pdf->Ln();$pdf->Ln();
+       
+       // $datamhs = $this->db->get('daftar_mhs')-result();
+       // foreach ($datamhs as $data){
+       //  $pdf->cell(40,5,$data->nama,1,0);
+       // }
+
+
+
+        
+        $pdf->Output();
